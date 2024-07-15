@@ -76,7 +76,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:user', 'role:admin']],
     Route::resource('/absen', AbsenController::class);
     Route::resource('/tarian', TarianController::class);
     Route::resource('/layout', LayoutController::class);
-    Route::post('/layout/serti', [LayoutController::class, 'serti'])->name('layout.serti');
+    Route::post('/layout-serti', [LayoutController::class, 'serti'])->name('layout.serti');
     Route::post('/tari-import', [TarianController::class, 'fileImport'])->name('tari-import');
 });
 

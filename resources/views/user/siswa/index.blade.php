@@ -52,7 +52,7 @@
                                             @csrf
                                             <div class="form-group" style="max-width: 500px; margin: 0 auto;">
                                                 <label for="">Donwload Template</label>
-                                                <a href="{{ asset('template/template.xlsx') }}" target="_blank"><button type="button" class="btn btn-info">Download</button></a>
+                                                <a href="https://ayodya-production.up.railway.app/template/template.xlsx" target="_blank"><button type="button" class="btn btn-info">Download</button></a>
                                             </div>
                                             <div class="form-group" style="max-width: 500px; margin: 0 auto;">
                                                 <label for="">Kelas</label>
@@ -121,7 +121,7 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td class="text-center">
-                                                <img src="{{ asset('storage/' . $siswa->foto) }}" alt="" width="80px">
+                                                <img src="{{ asset('/' . $siswa->foto) }}" alt="" width="80px">
                                             </td>
                                             <td>{{ $siswa->no_induk }}</td>
                                             <td>{{ $siswa->nama_siswa }}</td>

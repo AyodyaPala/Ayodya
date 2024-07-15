@@ -25,28 +25,16 @@
                                             <th scope="col">No</th>
                                             <th scope="col">Background</th>
                                             <th scope="col">Kelas</th>
-                                            <th scope="col">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody class="text-center">
                                         @foreach ($layouts as $layout)
-                                            <tr>
+                                            <tr>d
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td style="width: 50%">
                                                     <img src="{{ asset('/') . $layout->image }}" alt="" width="50%">
                                                 </td>
                                                 <td>{{ $layout->kelas }}</td>
-                                                <td class="text-center">
-                                                    <form onsubmit="return confirm('Apakah Anda Yakin ?');"
-                                                        action="{{ route('layout.destroy', $layout->id) }}" method="POST">
-                                                        <a href="{{ route('layout.edit', $layout->id) }}"
-                                                            class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger"><i
-                                                                class="fas fa-trash"></i></button>
-                                                    </form>
-                                                </td>
                                             </tr>
                                         @endforeach
                                     </tbody>
