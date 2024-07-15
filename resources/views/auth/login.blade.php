@@ -7,6 +7,7 @@
     <link rel="icon" href="{{ asset('assets/img/Layer1001.svg') }}" type="image/x-icon" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 
