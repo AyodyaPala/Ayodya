@@ -203,12 +203,27 @@ class SiswaController extends Controller
             }
         }
 
-        $siswa->nilai->delet();
-        $siswa->vokal->delete();
-        $siswa->sinopsis->delete();
-        $siswa->delete();
+        if ($siswa->nilai) {
+            foreach ($siswa->nilai as $nilai) {
+                $nilai->delete();
+            }
+        }
+    
+        if ($siswa->vokal) {
+            foreach ($siswa->vokal as $vokal) {
+                $vokal->delete();
+            }
+        }
+    
+        if ($siswa->sinopsis) {
+            foreach ($siswa->sinopsis as $sinopsis) {
+                $sinopsis->delete();
+            }
+        }
 
-        if ($siswa) {
+        $deleted = $siswa->delete();
+
+        if ($deleted) {
             //redirect dengan pesan sukses
             return redirect()->route('siswa.index')->with(['success' => 'Data Berhasil Dihapus!']);
         } else {
