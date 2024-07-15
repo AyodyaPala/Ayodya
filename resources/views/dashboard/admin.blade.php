@@ -51,7 +51,7 @@
     <div class="container mt--5">
         <div class="mt-3 card" id="main" style="z-index: 2; overflow: hidden;">
             <div class="m-3 row">
-                <input type="checkbox" name="" id="" class="toggle">
+                <input type="checkbox" name="" id="" class="toggle" style="overflow: hidden">
                 <div class="text-center col-lg-4">
                     <img src="{{ asset('image/Winners_Flatline.svg') }}" class="card-img-top"
                         alt="..." style="width: 70%; height: 170px;">
@@ -106,7 +106,8 @@
 
         menuToggle.addEventListener('click', function () {
             cabang.classList.toggle('slide');
-            main.style.opacity = 100%;
+            cabang.style.opacity = 100%;
+            menuToggle.style.overflow = 'visible';
         })
     </script>
 @endsection
