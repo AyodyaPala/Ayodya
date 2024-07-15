@@ -6,6 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title') | Ayodya Pala</title>
     <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link rel="icon" href="{{ asset('assets/img/Layer1001.svg') }}" type="image/x-icon" />
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">

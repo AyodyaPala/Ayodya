@@ -6,6 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title> Ayodya Pala Dashboard Admin</title>
     <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link rel="icon" href="{{ asset('Atlantis-Lite/assets/img/Layer1001.svg') }}" type="image/x-icon" />
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
@@ -53,7 +54,7 @@
         <nav class="navbar navbar-header navbar-expand-lg" style="background: #6C63FF">
 
             <div class="container-fluid">
-                <a href="/dashboard" class="logo mt-1">
+                <a href="/dashboard" class="mt-1 logo">
                     <img src="{{ asset('Atlantis-Lite/assets/img/Layer1001.svg') }}" alt="navbar brand"
                         class="navbar-brand " style="height:50px; width:50px ;">
                     <h1 style="color: white; height:50px;" class="navbar-brand ">Ayodya Pala</h1>
@@ -74,7 +75,7 @@
                                         <div class="user-box">
                                             <div class="avatar-lg"><img
                                                     src="{{ asset('image/default.png') }}" alt="image profile"
-                                                    class="avatar-img rounded"></div>
+                                                    class="rounded avatar-img"></div>
                                             <div class="u-text">
                                                 <h4>Siswa</h4>
                                                 <p class="text-muted">Siswa</p><a href=""
