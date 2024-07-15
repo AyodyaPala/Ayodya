@@ -52,7 +52,7 @@ class LayoutController extends Controller
         $nama_file = $name . "." . $extension;
 
         // Proses Upload File
-        $destinationPath = 'background';
+        $destinationPath = 'public/background';
         $file->move($destinationPath, $nama_file);
         $filenameSimpan = $destinationPath . '/' . $nama_file;
 
