@@ -52,7 +52,7 @@
                                             @csrf
                                             <div class="form-group" style="max-width: 500px; margin: 0 auto;">
                                                 <label for="">Donwload Template</label>
-                                                <a href="{{ route('download.templates') }}" target="_blank"><button type="button" class="btn btn-info">Download</button></a>
+                                                <a href="{{ asset('template/template.xlsx') }}" target="_blank"><button type="button" class="btn btn-info">Download</button></a>
                                             </div>
                                             <div class="form-group" style="max-width: 500px; margin: 0 auto;">
                                                 <label for="">Kelas</label>
