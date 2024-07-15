@@ -21,11 +21,12 @@ class SiswaController extends Controller
     {
         $siswas = Siswa::orderby('nama_siswa', 'asc')->get();
         $kelas = Background::all();
+        $cabang = User::orderby('name', 'asc')->where('role', 'cabang')->get();
         // dd($siswa);
         // dd($kelas);
         // $user = User::all()->where('role', 'cabang')->first();
         // dd($user->tempat->name);
-        return view('user.siswa.index', compact('siswas', 'kelas'));
+        return view('user.siswa.index', compact('siswas', 'kelas', 'cabang'));
     }
 
     /**
@@ -117,22 +118,7 @@ class SiswaController extends Controller
             'kelas' => 'required',
         ]);
 
-        if ($request->foto != '') {
-            $file = $request->file('foto');
-
-            // Mendapatkan Nama File
-            $extension = $file->getClientOriginalExtension();
-            $name = $request->nama_siswa;
-            $nama = explode(" ", $name);
-            $nama_file = join("-", $nama) . "." . $extension;
-
-            // Proses Upload File
-            $destinationPath = 'image/siswa';
-            $path = $file->move($destinationPath, $nama_file);
-            $filenameSimpan = Storage::url($path);
-        }
-
-        if ($request->foto == '' && $request->password == '') {
+        if ($request->password == '') {
             $siswa->update([
                 'no_induk' => $request->no_induk,
                 'nama_siswa' => $request->nama_siswa,
@@ -142,21 +128,9 @@ class SiswaController extends Controller
                 'cabang' => $request->cabang,
                 'kelas' => $request->kelas,
             ]);
-        } elseif ($request->foto == '') {
+        }elseif ($request->password == '') {
             $siswa->update([
                 'no_induk' => $request->no_induk,
-                'nama_siswa' => $request->nama_siswa,
-                'tanggal_lahir' => $request->tanggal_lahir,
-                'orang_tua' => $request->orang_tua,
-                'alamat' => $request->alamat,
-                'cabang' => $request->cabang,
-                'kelas' => $request->kelas,
-                'password' => Hash::make($request->password),
-            ]);
-        } elseif ($request->password == '') {
-            $siswa->update([
-                'no_induk' => $request->no_induk,
-                'foto' => $filenameSimpan,
                 'nama_siswa' => $request->nama_siswa,
                 'tanggal_lahir' => $request->tanggal_lahir,
                 'orang_tua' => $request->orang_tua,
@@ -167,7 +141,6 @@ class SiswaController extends Controller
         } else {
             $siswa->update([
                 'no_induk' => $request->no_induk,
-                'foto' => $filenameSimpan,
                 'nama_siswa' => $request->nama_siswa,
                 'tanggal_lahir' => $request->tanggal_lahir,
                 'orang_tua' => $request->orang_tua,

@@ -31,18 +31,6 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="">Foto</label>
-                                <div class="">
-                                    <div class="input-file-image">
-                                        <img class="img-upload-preview" width="100" height="100"
-                                            src="{{ asset('storage/' . $siswa->foto) }}" alt="preview"
-                                            style="border-radius: 50%">
-                                        <input type="file" class="mt-2 form-control" name="foto">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
                                 <label class="font-weight-bold">Nama Siswa</label>
                                 <input type="text" class="form-control @error('nama_siswa') is-invalid @enderror"
                                     name="nama_siswa" value="{{ old('nama_siswa', $siswa->nama_siswa) }}"

@@ -17,20 +17,6 @@
                             @method('PUT')
 
                             <div class="form-group">
-                                <label class="">Upload Image <span class="required-label">*</span></label>
-                                <div class="">
-                                    <div class="input-file input-file-image">
-                                        <img class="img-upload-preview" width="150" height="100"
-                                            src="{{ asset('storage/' . $layout->background) }}" alt="preview">
-                                        <input type="file" class="form-control form-control-file" id="uploadImg"
-                                            name="background" accept="image/*" required>
-                                        <label for="uploadImg" class="btn btn-primary btn-round btn-lg"><i
-                                                class="fa fa-file-image"></i> Upload a Image</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
                                 <label class="font-weight-bold">Kelas</label>
                                 <input type="text" class="form-control @error('kelas') is-invalid @enderror"
                                     name="kelas" value="{{ old('kelas', $layout->kelas) }}"

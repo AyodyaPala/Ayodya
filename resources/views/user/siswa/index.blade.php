@@ -70,6 +70,31 @@
                                                 <label for="">File Data Siswa ( Excel )</label>
                                                 <input type="file" name="file" class="form-control">
                                             </div>
+                                            <div class="mb-4 form-group" style="max-width: 500px; margin: 0 auto;">
+                                                <label for="">Data Cabang</label>
+                                                <table id="multi-filter-select" class="table display table-striped table-hover">
+                                                    <thead style="background: #7a74fc" class="text-center text-white">
+                                                        <tr>
+                                                            <th scope="col">No</th>
+                                                            <th scope="col">Id</th>
+                                                            <th scope="col">Nama</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach ($cabang as $data)
+                                                            <tr>
+                                                                <td>{{ $loop->iteration }}</td>
+                                                                <td class="text-center">
+                                                                    <img src="{{ asset('storage/' . $data->singkatan) }}" alt="" width="80px">
+                                                                </td>
+                                                                <td>{{ $data->name }}</td>
+                                                            </tr>
+                                                        @endforeach
+                                                    </tbody>
+                                                </table>
+                                                <br>
+                                                <p class="color-red">Column Cabang di Excel di isi id cabangnya</p>
+                                            </div>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"

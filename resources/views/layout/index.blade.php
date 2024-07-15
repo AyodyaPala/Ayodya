@@ -18,8 +18,6 @@
                 <div class="container-fluid">
                     <div class="border-0 rounded shadow card">
                         <div class="card-body kekanan">
-                            <a href="{{ route('layout.create') }}" class="mb-3 btn btn-md btn-success">Tambah
-                                Background</a>
                             <div class="table-responsive">
                                 <table id="multi-filter-select" class="table display table-striped table-hover">
                                     <thead style="background: #7a74fc" class="text-center text-white">
