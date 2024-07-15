@@ -15,6 +15,7 @@
 
     .cabang{
         position: absolute;
+        opacity: 0%;
         width: 97%;
         transform: translateY(-100%);
         transition: .8s;
@@ -105,7 +106,7 @@
 
         menuToggle.addEventListener('click', function () {
             cabang.classList.toggle('slide');
-            main.style.overflow = 'visible';
+            main.style.opacity = 100%;
         })
     </script>
 @endsection
