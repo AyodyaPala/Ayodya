@@ -214,7 +214,7 @@ class SiswaController extends Controller
 
     public function template()
     {
-        $path = public_path('template/template.xlsx');
+        $path = asset('template/template.xlsx');
         $fileName = 'template.xlsx';
 
         return Response::download($path, $fileName, ['Content-Type: xlsx']);
