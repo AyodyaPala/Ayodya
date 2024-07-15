@@ -33,7 +33,7 @@
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td style="width: 50%">
-                                                    <img src="{{ asset('storage/') . $layout->image }}" alt="" width="50%">
+                                                    <img src="{{ asset('/') . $layout->image }}" alt="" width="50%">
                                                 </td>
                                                 <td>{{ $layout->kelas }}</td>
                                                 <td class="text-center">

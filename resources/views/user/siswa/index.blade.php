@@ -84,9 +84,7 @@
                                                         @foreach ($cabang as $data)
                                                             <tr>
                                                                 <td>{{ $loop->iteration }}</td>
-                                                                <td class="text-center">
-                                                                    <img src="{{ asset('storage/' . $data->singkatan) }}" alt="" width="80px">
-                                                                </td>
+                                                                <td>{{ $data->singkatan }}</td>
                                                                 <td>{{ $data->name }}</td>
                                                             </tr>
                                                         @endforeach
