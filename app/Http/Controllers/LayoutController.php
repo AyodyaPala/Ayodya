@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Layout;
 use App\Models\Background;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Mockery\Undefined;
 
 class LayoutController extends Controller
@@ -40,8 +41,8 @@ class LayoutController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'background'     => 'required',
-            'kelas'     => 'required',
+            'background' => 'required|file', // pastikan background adalah file
+            'kelas'      => 'required',
         ]);
 
         $file = $request->file('background');
@@ -51,25 +52,23 @@ class LayoutController extends Controller
         $name = $request->kelas;
         $nama_file = $name . "." . $extension;
 
-        // Proses Upload File
+        // Proses Upload File ke storage/app/public/background
         $destinationPath = 'public/background';
-        $file->move($destinationPath, $nama_file);
-        $filenameSimpan = $destinationPath . '/' . $nama_file;
+        $path = $file->storeAs($destinationPath, $nama_file);
+
+        $filenameSimpan = Storage::url($path); // Mendapatkan URL file
 
         $layout = Background::create([
-            'image'  => $filenameSimpan,
-            'kelas'  => $request->kelas,
+            'image' => $filenameSimpan,
+            'kelas' => $request->kelas,
         ]);
 
         if ($layout) {
-            //redirect dengan pesan sukses
             return redirect()->route('layout.index')->with(['success' => 'Data Berhasil Disimpan!']);
         } else {
-            //redirect dengan pesan error
             return redirect()->route('layout.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
-
     public function serti(Request $request)
     {
         $this->validate($request, [
@@ -152,7 +151,7 @@ class LayoutController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Background $layout)
-    { 
+    {
         $layout->siswa->delete();
         $layout->delete();
 
