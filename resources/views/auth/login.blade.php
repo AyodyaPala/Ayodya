@@ -4,7 +4,7 @@
 <head>
     <title>Login | Ayodya Pala</title>
     <meta charset="utf-8">
-    <link rel="icon" href="{{ public_path('assets/img/Layer1001.svg') }}" type="image/x-icon" />
+    <link rel="icon" href="{{ asset('assets/img/Layer1001.svg') }}" type="image/x-icon" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="{{ public_path('login-form-14/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('login-form-14/css/style.css') }}">
 
 </head>
 
@@ -83,10 +83,10 @@
 
 
 
-    <script src="{{ public_path('login-form-14/js/jquery.min.js') }}"></script>
-    <script src="{{ public_path('login-form-14/js/popper.js') }}"></script>
-    <script src="{{ public_path('login-form-14/js/bootstrap.min.js') }}"></script>
-    <script src="{{ public_path('login-form-14/js/main.js') }}"></script>
+    <script src="{{ asset('login-form-14/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('login-form-14/js/popper.js') }}"></script>
+    <script src="{{ asset('login-form-14/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('login-form-14/js/main.js') }}"></script>
 
 
 
