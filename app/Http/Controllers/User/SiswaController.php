@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Storage;
 
 class SiswaController extends Controller
 {
@@ -127,8 +128,8 @@ class SiswaController extends Controller
 
             // Proses Upload File
             $destinationPath = 'image/siswa';
-            $file->move($destinationPath, $nama_file);
-            $filenameSimpan = $destinationPath . '/' . $nama_file;
+            $path = $file->move($destinationPath, $nama_file);
+            $filenameSimpan = Storage::url($path);
         }
 
         if ($request->foto == '' && $request->password == '') {
@@ -194,7 +195,7 @@ class SiswaController extends Controller
      */
     public function destroy(Siswa $siswa)
     {
-        $file = public_path('/') . $siswa->foto;
+        $file = public_path('storage/') . $siswa->foto;
         $default = public_path('/image/default.png');
 
         if (file_exists($file)) {

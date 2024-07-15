@@ -4,7 +4,7 @@
     <div class="container mt-5 mb-5">
         <div class="row">
             <div class="col-md-12">
-                <div class="card border-0 shadow rounded">
+                <div class="border-0 rounded shadow card">
                     <div class="card-header">
                         <div class="d-flex align-items-center">
                             <h4 class="card-title">Edit Data Background</h4>
@@ -21,7 +21,7 @@
                                 <div class="">
                                     <div class="input-file input-file-image">
                                         <img class="img-upload-preview" width="150" height="100"
-                                            src="{{ asset('/' . $layout->background) }}" alt="preview">
+                                            src="{{ asset('storage/' . $layout->background) }}" alt="preview">
                                         <input type="file" class="form-control form-control-file" id="uploadImg"
                                             name="background" accept="image/*" required>
                                         <label for="uploadImg" class="btn btn-primary btn-round btn-lg"><i
@@ -38,7 +38,7 @@
 
                                 <!-- error message untuk kelas -->
                                 @error('kelas')
-                                    <div class="alert alert-danger mt-2">
+                                    <div class="mt-2 alert alert-danger">
                                         {{ $message }}
                                     </div>
                                 @enderror

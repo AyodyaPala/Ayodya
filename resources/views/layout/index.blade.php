@@ -13,16 +13,16 @@
                     aria-controls="pills-layout-nobd" aria-selected="true">Layout</a>
             </li>
         </ul>
-        <div class="tab-content mt-2 mb-3" id="pills-without-border-tabContent">
+        <div class="mt-2 mb-3 tab-content" id="pills-without-border-tabContent">
             <div class="tab-pane fade show active" id="background" role="tabpanel" aria-labelledby="pills-home-tab-nobd">
                 <div class="container-fluid">
-                    <div class="card border-0 shadow rounded">
+                    <div class="border-0 rounded shadow card">
                         <div class="card-body kekanan">
-                            <a href="{{ route('layout.create') }}" class="btn btn-md btn-success mb-3">Tambah
+                            <a href="{{ route('layout.create') }}" class="mb-3 btn btn-md btn-success">Tambah
                                 Background</a>
                             <div class="table-responsive">
-                                <table id="multi-filter-select" class="display table table-striped table-hover">
-                                    <thead style="background: #7a74fc" class="text-white text-center">
+                                <table id="multi-filter-select" class="table display table-striped table-hover">
+                                    <thead style="background: #7a74fc" class="text-center text-white">
                                         <tr>
                                             <th scope="col">No</th>
                                             <th scope="col">Background</th>
@@ -35,7 +35,7 @@
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td style="width: 50%">
-                                                    <img src="{{ asset('/') . $layout->image }}" alt="" width="50%">
+                                                    <img src="{{ asset('storage/') . $layout->image }}" alt="" width="50%">
                                                 </td>
                                                 <td>{{ $layout->kelas }}</td>
                                                 <td class="text-center">
@@ -60,7 +60,7 @@
             </div>
             <div class="tab-pane fade show" id="layout" role="tabpanel" aria-labelledby="pills-layout-tab-nobd">
                 <div class="container-fluid">
-                    <div class="card border-0 shadow rounded">
+                    <div class="border-0 rounded shadow card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title">Data Sertifikat</h4>
@@ -77,7 +77,7 @@
 
                                     <!-- error message untuk kelas -->
                                     @error('tanggal')
-                                        <div class="alert alert-danger mt-2">
+                                        <div class="mt-2 alert alert-danger">
                                             {{ $message }}
                                         </div>
                                     @enderror
@@ -90,7 +90,7 @@
 
                                     <!-- error message untuk kelas -->
                                     @error('tempat')
-                                        <div class="alert alert-danger mt-2">
+                                        <div class="mt-2 alert alert-danger">
                                             {{ $message }}
                                         </div>
                                     @enderror

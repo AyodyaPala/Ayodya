@@ -4,7 +4,7 @@
     <div class="container mt-5 mb-5">
         <div class="row">
             <div class="col-md-12">
-                <div class="card border-0 shadow rounded">
+                <div class="border-0 rounded shadow card">
                     <div class="card-header">
                         <div class="d-flex align-items-center">
                             <h4 class="card-title">Edit Data Siswa Ayodya</h4>
@@ -24,7 +24,7 @@
 
                                 <!-- error message untuk no_induk -->
                                 @error('no_induk')
-                                    <div class="alert alert-danger mt-2">
+                                    <div class="mt-2 alert alert-danger">
                                         {{ $message }}
                                     </div>
                                 @enderror
@@ -35,9 +35,9 @@
                                 <div class="">
                                     <div class="input-file-image">
                                         <img class="img-upload-preview" width="100" height="100"
-                                            src="{{ asset('/' . $siswa->foto) }}" alt="preview"
+                                            src="{{ asset('storage/' . $siswa->foto) }}" alt="preview"
                                             style="border-radius: 50%">
-                                        <input type="file" class="form-control mt-2" name="foto">
+                                        <input type="file" class="mt-2 form-control" name="foto">
                                     </div>
                                 </div>
                             </div>
@@ -50,7 +50,7 @@
 
                                 <!-- error message untuk nama_siswa -->
                                 @error('nama_siswa')
-                                    <div class="alert alert-danger mt-2">
+                                    <div class="mt-2 alert alert-danger">
                                         {{ $message }}
                                     </div>
                                 @enderror
@@ -64,7 +64,7 @@
 
                                 <!-- error message untuk tanggal_lahir -->
                                 @error('tanggal_lahir')
-                                    <div class="alert alert-danger mt-2">
+                                    <div class="mt-2 alert alert-danger">
                                         {{ $message }}
                                     </div>
                                 @enderror
@@ -79,7 +79,7 @@
 
                                 <!-- error message untuk orang_tua -->
                                 @error('orang_tua')
-                                    <div class="alert alert-danger mt-2">
+                                    <div class="mt-2 alert alert-danger">
                                         {{ $message }}
                                     </div>
                                 @enderror
@@ -91,7 +91,7 @@
 
                                 <!-- error message untuk alamat -->
                                 @error('alamat')
-                                    <div class="alert alert-danger mt-2">
+                                    <div class="mt-2 alert alert-danger">
                                         {{ $message }}
                                     </div>
                                 @enderror
@@ -110,7 +110,7 @@
 
                                 <!-- error message untuk cabang -->
                                 @error('cabang')
-                                    <div class="alert alert-danger mt-2">
+                                    <div class="mt-2 alert alert-danger">
                                         {{ $message }}
                                     </div>
                                 @enderror
@@ -130,7 +130,7 @@
 
                                 <!-- error message untuk kelas -->
                                 @error('kelas')
-                                    <div class="alert alert-danger mt-2">
+                                    <div class="mt-2 alert alert-danger">
                                         {{ $message }}
                                     </div>
                                 @enderror

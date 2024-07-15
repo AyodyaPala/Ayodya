@@ -2,8 +2,8 @@
 @section('title', 'Table Siswa')
 @section('main')
 
-    <div class="container-fluid mt-5">
-        <ul class="nav nav-pills nav-secondary nav-pills-no-bd d-flex justify-content-center align-items-center mb-3"
+    <div class="mt-5 container-fluid">
+        <ul class="mb-3 nav nav-pills nav-secondary nav-pills-no-bd d-flex justify-content-center align-items-center"
             id="pills-tab-without-border" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" id="pills-all-tab-nobd" data-toggle="pill" href="#pills-all-nobd" role="tab"
@@ -17,14 +17,14 @@
                 </li>
             @endforeach
         </ul>
-        <div class="card border-0 shadow rounded">
+        <div class="border-0 rounded shadow card">
             <div class="card-header">
                 <div class="d-flex align-items-center">
                     <h4 class="card-title">Data Siswa Ayodya</h4>
                 </div>
             </div>
             <div class="card-body kekanan">
-                <div class="tab-content mt-2 mb-3" id="pills-without-border-tabContent">
+                <div class="mt-2 mb-3 tab-content" id="pills-without-border-tabContent">
                     <div class="tab-pane fade show active" id="pills-all-nobd" role="tabpanel"
                         aria-labelledby="pills-all-tab-nobd">
                         <div class="mb-3 d-flex justify-content-between">
@@ -66,7 +66,7 @@
                                                     @endforeach
                                                 </select>
                                             </div>
-                                            <div class="form-group mb-4" style="max-width: 500px; margin: 0 auto;">
+                                            <div class="mb-4 form-group" style="max-width: 500px; margin: 0 auto;">
                                                 <label for="">File Data Siswa ( Excel )</label>
                                                 <input type="file" name="file" class="form-control">
                                             </div>
@@ -81,8 +81,8 @@
                             </div>
                         </div>
                         <div class="table-responsive">
-                            <table id="multi-filter-select" class="display table table-striped table-hover">
-                                <thead style="background: #7a74fc" class="text-white text-center">
+                            <table id="multi-filter-select" class="table display table-striped table-hover">
+                                <thead style="background: #7a74fc" class="text-center text-white">
                                     <tr>
                                         <th scope="col">No</th>
                                         <th scope="col">Foto</th>
@@ -98,7 +98,7 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td class="text-center">
-                                                <img src="{{ asset('/' . $siswa->foto) }}" alt="" width="80px">
+                                                <img src="{{ asset('storage/' . $siswa->foto) }}" alt="" width="80px">
                                             </td>
                                             <td>{{ $siswa->no_induk }}</td>
                                             <td>{{ $siswa->nama_siswa }}</td>
@@ -128,8 +128,8 @@
                         <div class="tab-pane fade" id="pills-{{ $item->id }}-nobd" role="tabpanel"
                             aria-labelledby="pills-{{ $item->id }}-tab-nobd">
                             <div class="table-responsive">
-                                <table class="siswa display table table-striped table-hover">
-                                    <thead style="background: #7a74fc" class="text-white text-center">
+                                <table class="table siswa display table-striped table-hover">
+                                    <thead style="background: #7a74fc" class="text-center text-white">
                                         <tr>
                                             <th scope="col">No</th>
                                             <th scope="col">Foto</th>
