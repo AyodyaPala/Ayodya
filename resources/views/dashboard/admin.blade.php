@@ -15,7 +15,7 @@
 
     .cabang{
         position: absolute;
-        /* opacity: 0%; */
+        opacity: 0%;
         width: 97%;
         transform: translateY(-100%);
         transition: .8s;
@@ -49,7 +49,7 @@
         </div>
     </div>
 
-    <div class="container mt--5" style="overflow: auto">
+    <div class="container mt--5">
         <div class="mt-3 card" id="main" style="z-index: 2;">
             <div class="m-3 row">
                 <input type="checkbox" name="" id="" class="toggle">
