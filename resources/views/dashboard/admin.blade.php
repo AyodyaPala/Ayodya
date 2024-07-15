@@ -26,32 +26,32 @@
     }
 </style>
     {{-- <div class="panel-header bg-primary-gradient">
-    <div class="page-inner py-5">
+    <div class="py-5 page-inner">
         <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
             <div>
-                <h2 class="text-white pb-2 fw-bold">Dashboard</h2>
-                <h5 class="text-white op-7 mb-2">Ayodya Pala</h5>
+                <h2 class="pb-2 text-white fw-bold">Dashboard</h2>
+                <h5 class="mb-2 text-white op-7">Ayodya Pala</h5>
             </div>
             
         </div>
     </div>
 </div> --}}
     <div class="panel-header " style="background-image: linear-gradient(#7a74fc, #6C63FF);">
-        <div class="page-inner py-5">
+        <div class="py-5 page-inner">
             <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
                 <div>
-                    <h2 class="text-white pb-2 fw-bold">Dashboard </h2>
-                    <h5 class="text-white op-7 mb-2">{{ Carbon\Carbon::now()->isoFormat('dddd, D MMMM YYYY') }}</h5>
+                    <h2 class="pb-2 text-white fw-bold">Dashboard </h2>
+                    <h5 class="mb-2 text-white op-7">{{ Carbon\Carbon::now()->isoFormat('dddd, D MMMM YYYY') }}</h5>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="container mt--5">
-        <div class="card mt-3" style="z-index: 2">
-            <div class="row m-3">
+        <div class="mt-3 card" id="main" style="z-index: 2; overflow: hidden;">
+            <div class="m-3 row">
                 <input type="checkbox" name="" id="" class="toggle">
-                <div class="col-lg-4 text-center">
+                <div class="text-center col-lg-4">
                     <img src="{{ asset('image/Winners_Flatline.svg') }}" class="card-img-top"
                         alt="..." style="width: 70%; height: 170px;">
                 </div>
@@ -101,9 +101,11 @@
     <script type="text/javascript">
         const menuToggle = document.querySelector('.toggle');
         const cabang = document.querySelector('.cabang');
+        const main = document.querySelector('#main');
 
         menuToggle.addEventListener('click', function () {
             cabang.classList.toggle('slide');
+            main.style.overflow = 'visible';
         })
     </script>
 @endsection
