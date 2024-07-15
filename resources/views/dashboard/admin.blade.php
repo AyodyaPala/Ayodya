@@ -24,6 +24,7 @@
     .cabang.slide{
         transform: translateY(0);
         transition: .8s;
+        opacity: 100%;
     }
 </style>
     {{-- <div class="panel-header bg-primary-gradient">
@@ -48,10 +49,10 @@
         </div>
     </div>
 
-    <div class="container mt--5">
-        <div class="mt-3 card" id="main" style="z-index: 2; overflow: hidden;">
+    <div class="container mt--5" style="overflow: auto">
+        <div class="mt-3 card" id="main" style="z-index: 2;">
             <div class="m-3 row">
-                <input type="checkbox" name="" id="" class="toggle" style="overflow: hidden">
+                <input type="checkbox" name="" id="" class="toggle">
                 <div class="text-center col-lg-4">
                     <img src="{{ asset('image/Winners_Flatline.svg') }}" class="card-img-top"
                         alt="..." style="width: 70%; height: 170px;">
