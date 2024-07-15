@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title') | Ayodya Pala</title>
     <meta content='width=device-width, initial-scale=1.0' name='viewport' />
-    <link rel="icon" href="{{ asset('Atlantis-Lite/assets/img/Layer1001.svg') }}" type="image/x-icon" />
+    <link rel="icon" href="{{ asset('assets/img/Layer1001.svg') }}" type="image/x-icon" />
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
@@ -38,7 +38,7 @@
     </style>
 
     <!-- Fonts and icons -->
-    <script src="{{ asset('Atlantis-Lite/assets/js/plugin/webfont/webfont.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugin/webfont/webfont.min.js') }}"></script>
     <script>
         WebFont.load({
             google: {
@@ -48,7 +48,7 @@
                 "families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands",
                     "simple-line-icons"
                 ],
-                urls: ["{{ asset('Atlantis-Lite/assets/css/fonts.min.css') }}"]
+                urls: ["{{ asset('assets/css/fonts.min.css') }}"]
             },
             active: function() {
                 sessionStorage.fonts = true;
@@ -56,8 +56,8 @@
         });
     </script>
     <!-- CSS Files -->
-    <link rel="stylesheet" href="{{ asset('Atlantis-Lite/assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('Atlantis-Lite/assets/css/atlantis.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/atlantis.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
@@ -65,7 +65,7 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
     <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link rel="stylesheet" href="{{ asset('Atlantis-Lite/assets/css/demo.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/demo.css') }}">
 </head>
 
 <body>
@@ -74,7 +74,7 @@
             <!-- Logo Header -->
             <div class="logo-header" style="background: #7a74fc">
                 <a href="/dashboard" class="logo">
-                    <img src="{{ asset('Atlantis-Lite/assets/img/Layer1001.svg') }}" alt="navbar brand"
+                    <img src="{{ asset('assets/img/Layer1001.svg') }}" alt="navbar brand"
                         class="navbar-brand " style="height:50px; width:50px ;">
                     <h1 style="color: white; height:50px;" class="navbar-brand ">Ayodya Pala</h1>
 
@@ -82,7 +82,7 @@
 
 
 
-                <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse"
+                <button class="ml-auto navbar-toggler sidenav-toggler" type="button" data-toggle="collapse"
                     data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon">
                         <i class="icon-menu"></i>
@@ -117,7 +117,7 @@
                                         <div class="user-box">
                                             <div class="avatar-lg"><img
                                                     src="{{ asset('/' . Auth::user()->foto) }}" alt="image profile"
-                                                    class="avatar-img rounded"></div>
+                                                    class="rounded avatar-img"></div>
                                             <div class="u-text">
                                                 <h4>{{ Auth::user()->name }}</h4>
                                                 <p class="text-muted">{{ Auth::user()->email }}</p><a href=""
@@ -294,22 +294,22 @@
         </div>
     </div>
     <!--   Core JS Files   -->
-    {{-- <script src="{{ asset('Atlantis-Lite/assets/js/core/jquery.3.2.1.min.js')}}"></script> --}}
-    <script src="{{ asset('Atlantis-Lite/assets/js/core/popper.min.js') }}"></script>
-    <script src="{{ asset('Atlantis-Lite/assets/js/core/bootstrap.min.js') }}"></script>
+    {{-- <script src="{{ asset('assets/js/core/jquery.3.2.1.min.js')}}"></script> --}}
+    <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
     <!-- jQuery UI -->
-    <script src="{{ asset('Atlantis-Lite/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js') }}"></script>
-    <script src="{{ asset('Atlantis-Lite/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js') }}">
+    <script src="{{ asset('assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js') }}">
     </script>
 
     <!-- jQuery Scrollbar -->
-    <script src="{{ asset('Atlantis-Lite/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
     <!-- Datatables -->
-    <script src="{{ asset('Atlantis-Lite/assets/js/plugin/datatables/datatables.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugin/datatables/datatables.min.js') }}"></script>
     <!-- Atlantis JS -->
-    <script src="{{ asset('Atlantis-Lite/assets/js/atlantis.min.js') }}"></script>
+    <script src="{{ asset('assets/js/atlantis.min.js') }}"></script>
     <!-- Atlantis DEMO methods, don't include it in your project! -->
-    <script src="{{ asset('Atlantis-Lite/assets/js/setting-demo2.js') }}"></script>
+    <script src="{{ asset('assets/js/setting-demo2.js') }}"></script>
     <script>
         $(document).ready(function() {
             $('#basic-datatables').DataTable({});

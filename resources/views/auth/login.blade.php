@@ -4,7 +4,7 @@
 <head>
     <title>Login | Ayodya Pala</title>
     <meta charset="utf-8">
-    <link rel="icon" href="{{ asset('Atlantis-Lite/assets/img/Layer1001.svg') }}" type="image/x-icon" />
+    <link rel="icon" href="{{ asset('assets/img/Layer1001.svg') }}" type="image/x-icon" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -23,9 +23,9 @@
                 <div class="col-md-12 col-lg-10">
                     <div class="wrap d-md-flex">
                         <div class="img"
-                            style="background-image: url('{{ asset('Atlantis-Lite/assets/img/MASTER landscape.jpg') }}');">
+                            style="background-image: url('{{ asset('assets/img/MASTER landscape.jpg') }}');">
                         </div>
-                        <div class="login-wrap p-4 p-md-5">
+                        <div class="p-4 login-wrap p-md-5">
                             <div class="d-flex">
                                 <div class="w-100">
                                     <h3 class="mb-4">Login</h3>
@@ -48,21 +48,21 @@
 							@endif
                             <form method="POST" class="signin-form">
 								@csrf
-                                <div class="form-group mb-3">
+                                <div class="mb-3 form-group">
                                     <label class="label" for="name">Username</label>
                                     <input type="text" class="form-control @error('username') is-invalid @enderror" placeholder="Username" name="username">
                                 </div>
-                                <div class="form-group mb-3">
+                                <div class="mb-3 form-group">
                                     <label class="label" for="password">Password</label>
                                     <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password">
                                 </div>
                                 <div class="form-group">
                                     <button type="submit"
-                                        class="form-control btn btn-primary rounded submit px-3">Login</button>
+                                        class="px-3 rounded form-control btn btn-primary submit">Login</button>
                                 </div>
                                 <div class="form-group d-md-flex">
-                                    <div class="w-50 text-left">
-                                        <label class="checkbox-wrap checkbox-primary mb-0">Remember Me
+                                    <div class="text-left w-50">
+                                        <label class="mb-0 checkbox-wrap checkbox-primary">Remember Me
                                             <input type="checkbox" checked>
                                             <span class="checkmark"></span>
                                         </label>
