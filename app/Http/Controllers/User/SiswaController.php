@@ -7,6 +7,7 @@ use App\Imports\SiswaImport;
 use App\Models\Background;
 use App\Models\Nilai;
 use App\Models\Nilaivokal;
+use App\Models\Sinopsis;
 use App\Models\Siswa;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -177,9 +178,13 @@ class SiswaController extends Controller
             }
         }
 
-        $siswa->nilai->delete();
-        $siswa->vokal->delete();
-        $siswa->sinopsis->delete();
+        $nilai = Nilai::all()->where('no_induk', $siswa->no_induk);
+        $vokal = Nilaivokal::all()->where('no_induk', $siswa->no_induk);
+        $sinopsis = Sinopsis::all()->where('no_induk', $siswa->no_induk);
+
+        $nilai->delete();
+        $vokal->delete();
+        $sinopsis->delete();
         $siswa->delete();
 
         $deleted = $siswa->delete();

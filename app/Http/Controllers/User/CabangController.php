@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Nilai;
+use App\Models\Nilaivokal;
+use App\Models\Sinopsis;
 use App\Models\Siswa;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -138,9 +141,19 @@ class CabangController extends Controller
     {
         $siswa = Siswa::where('cabang', $cabang->singkatan);
         $siswa->delete();
-        $siswa->nilai->delete();
-        $siswa->vokal->delete();
-        $siswa->sinopsis->delete();
+
+        foreach ($siswa as $data)
+        {
+
+            $nilai = Nilai::all()->where('no_induk', $data->no_induk);
+            $vokal = Nilaivokal::all()->where('no_induk', $data->no_induk);
+            $sinopsis = Sinopsis::all()->where('no_induk', $data->no_induk);
+
+            $nilai->delete();
+            $vokal->delete();
+            $sinopsis->delete();
+        }
+
         $cabang->delete();
 
         if ($cabang) {
