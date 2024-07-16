@@ -177,23 +177,10 @@ class SiswaController extends Controller
             }
         }
 
-        if ($siswa->nilai) {
-            foreach ($siswa->nilai as $nilai) {
-                $nilai->delete();
-            }
-        }
-    
-        if ($siswa->vokal) {
-            foreach ($siswa->vokal as $vokal) {
-                $vokal->delete();
-            }
-        }
-    
-        if ($siswa->sinopsis) {
-            foreach ($siswa->sinopsis as $sinopsis) {
-                $sinopsis->delete();
-            }
-        }
+        $siswa->nilai->delet();
+        $siswa->vokal->delete();
+        $siswa->sinopsis->delete();
+        $siswa->delete();
 
         $deleted = $siswa->delete();
 
