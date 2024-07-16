@@ -177,7 +177,7 @@ class SiswaController extends Controller
             }
         }
 
-        $siswa->nilai->delet();
+        $siswa->nilai->delete();
         $siswa->vokal->delete();
         $siswa->sinopsis->delete();
         $siswa->delete();
