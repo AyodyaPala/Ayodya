@@ -182,9 +182,17 @@ class SiswaController extends Controller
         $vokal = Nilaivokal::all()->where('no_induk', $siswa->no_induk);
         $sinopsis = Sinopsis::all()->where('no_induk', $siswa->no_induk);
 
-        $nilai->delete();
-        $vokal->delete();
-        $sinopsis->delete();
+        foreach($nilai as $data){
+            $data->delete();
+        }
+
+        foreach ($vokal as $data) {
+            $data->delete();
+        }
+
+        foreach ($sinopsis as $data) {
+            $data->delete();
+        }
         $siswa->delete();
 
         $deleted = $siswa->delete();

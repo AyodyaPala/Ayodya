@@ -149,9 +149,17 @@ class CabangController extends Controller
             $vokal = Nilaivokal::all()->where('no_induk', $data->no_induk);
             $sinopsis = Sinopsis::all()->where('no_induk', $data->no_induk);
 
-            $nilai->delete();
-            $vokal->delete();
-            $sinopsis->delete();
+            foreach($nilai as $data){
+                $data->delete();
+            }
+    
+            foreach ($vokal as $data) {
+                $data->delete();
+            }
+    
+            foreach ($sinopsis as $data) {
+                $data->delete();
+            }
         }
 
         $cabang->delete();
